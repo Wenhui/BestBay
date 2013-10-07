@@ -1,0 +1,164 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$lightGray: #999;
+
+h4{
+  font-size: 1.7em;
+  font-style: oblique;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: normal;
+  color: $lightGray;
+}
+
+#pandaLine{
+	position: relative;
+	top: 15px; 
+}
+
+#panda{
+	position: relative;
+	top: 10px;
+}
+
+#titlePic{
+
+}
+
+#navB{
+	position: relative;
+    //top: 10px;
+    //height: 20pt;
+    background-color: #FFECB0;
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+
+    li {
+      font-size: 1.2em;
+      letter-spacing: -1px;
+      font-weight: normal;
+      font-style: normal;
+
+
+    }
+
+    a{
+      color: #000000;
+      font-style: normal;
+
+    }
+
+}
+
+.navbar-inner{
+	height: 20pt;
+	background-color: #FFECB0;
+	background-image: none;
+	background-repeat: no-repeat;
+	filter: none;
+
+    li {
+      font-size: 1.2em;
+      letter-spacing: -1px;
+      font-weight: normal;
+      font-style: normal;
+
+
+    }
+
+
+}
+.nav-tabs>li.disabled>a {
+  color: #000000;
+  cursor: default;
+  border: none;
+  font-style: oblique;
+}
+
+.nav-tabs>li.disabled>a:hover {
+  background-color: inherit;
+}
+
+#navTop{
+  //height: 20pt;
+  top: 10px;
+  position: relative;
+  background-color: #FFECB0;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+
+  li {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    font-weight: normal;
+    font-style: normal;
+
+
+
+  }
+
+
+    //a{
+    //  color: #000000;
+    //
+    //}
+
+  .dropdown-menu{
+    li {
+      font-size: 0.9em;
+    }
+
+  }
+
+}
+
+
+//.nav{
+//	position: relative;
+//	top: 10px;
+//}
+
+#navProfile{
+	font-size: 1.2em;
+	font-style: oblique;
+	font-weight: normal;
+	position: relative;
+	left: 100px;
+	top: 2px;
+}
+
+#search{
+	position: relative;
+	//left: 140px;
+    margin-top: 10px;
+
+}
+#notifications{
+  position: relative;
+  top: 5px;
+}
+#item_list{
+  
+}
+
+#item_list .item_image {
+    margin-bottom: 4px;
+    width: 100px;
+    min-height: 100px;
+    border: 4px solid #f1dfb8;
+    text-align: center;
+    background-color: #ffffff;
+    vertical-align: top;
+    margin: 5px;
+    display: inline-block;
+
+}
+
+
+
+

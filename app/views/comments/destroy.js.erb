@@ -1,0 +1,4 @@
+// ajax for delete a comment
+$('.delete-comment').bind('ajax:success', function() {
+    $(this).closest('li').remove();
+});

@@ -1,0 +1,31 @@
+<!-- display items in the watchlist including posted items, bid items and watched items -->
+<% if !current_user.nil? %>
+
+    <ul class="nav nav-tabs">
+      <li><a href="#Posted" data-toggle="tab">Posted</a></li>
+      <li><a href="#Watched" data-toggle="tab">Watched</a></li>
+      <li><a href="#Bid" data-toggle="tab">Bid</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+      <div class="tab-pane active" id="Posted">
+        <%=  render :partial => 'items/watch_list', locals: {:items =>  @items, :p_name => "page"}  %>
+
+      </div>
+
+      <div class="tab-pane" id="Watched">
+        <%=  render :partial => 'items/watch_list', locals: {:items =>  @watched_items, :p_name => "watched_page"}  %>
+      </div>
+
+      <div class="tab-pane" id="Bid">
+        <%=  render :partial => 'items/watch_list', locals: {:items =>  @bid_items, :p_name => "bid_page"}  %>
+      </div>
+
+    </div>
+<% end %>
+
+<script>
+$(document).ready(function() {
+$('.pagination a').attr('data-remote', 'true');
+});</script>

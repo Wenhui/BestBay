@@ -1,0 +1,50 @@
+<!--This partial displays a form for posting a new item.-->
+ <div class="container">
+   <div class="row">
+     <div class="span6 offset3">
+      <%= form_for(@item, :html => { :multipart => true }) do |c| %>
+         <!--displays errors if entered item info is not valid-->
+         <%=  render partial: 'shared/error_messages', locals: {obj: @item} %>
+
+          <%= c.label 'Enter item name' %>
+          <%= c.text_field :name %>
+
+          <%= c.label 'Upload picture' %>
+          <%= c.file_field :picture%>
+
+          <%= c.label 'Enter item description' %>
+          <%= c.text_area :description, :rows => 8 %>
+
+          <%= c.label 'Start price' %>
+          $ <%= c.text_field :start_price %>
+
+          <%= c.label 'Reserve price' %>
+          $ <%= c.text_field :reserve_price %>
+
+          <%= c.label 'Bid time' %>
+          <%= c.text_field :bid_time %> hour(s)
+
+          <%= c.label 'Category' %>
+          <% for category in Category.all %>
+            <div>
+              <%= check_box_tag "item[category_ids][]", category.id, @item.categories.include?(category) %>
+              <%= category.name %>
+            </div>
+          <% end %>
+
+
+           <div class="btn-toolbar">
+             <a>
+                <%= c.submit buttonName, class: "btn btn-primary"  %>
+             </a>
+
+             <%= link_to "Cancel", path, class: "btn btn-primary" %>
+
+           </div>
+
+        </div>
+  </div>
+ </div>
+ <% end %>
+
+

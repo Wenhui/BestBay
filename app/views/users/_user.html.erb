@@ -1,0 +1,49 @@
+<!-- partial to display form of all information for user -->
+<%= form_for(@user) do |c| %>
+    <%=  render partial: 'shared/error_messages', locals: {obj: @user} %>
+    <div class="row">
+
+      <div class="span6 offset2">
+      <%= c.label 'Enter user name' %>
+      <%= c.text_field :userName %>
+
+      <%= c.label 'Enter your e-mail address' %>
+      <%= c.text_field :email %>
+
+      <%= c.label 'Enter password (at least 6 characters)' %>
+      <%= c.password_field :password %>
+
+      <%= c.label 'Confirm password' %>
+      <%= c.password_field :password_confirmation %>
+
+
+
+      <%= c.label 'Birthdate' %>
+      <%= c.date_select(:birthdate, :start_year => 1900, :end_year => 2012) %>
+      </div>
+
+    
+       <div class="span6 offset2">
+         <%= c.label 'Address' %>
+         <%= c.text_field :address %>
+
+         <%= c.label 'Credit Card Number' %>
+         <%= c.text_field :card_number, :maxlength => 16 %>
+
+          <%= c.label 'Security Number' %>
+          <%= c.text_field :security_num, :maxlength => 3 %>
+
+
+          <%= c.label 'Expiration Date' %>
+          <%= c.date_select(:expiration_date, :discard_day => true, :start_year => 2011, :end_year => 2030, :style => 'class=block') %>
+
+          <div class="btn-toolbar">
+              <a>
+                <%= c.submit buttonName, class: "btn btn-primary"  %>
+              </a>
+
+              <%= link_to "Cancel", path, class: "btn btn-primary" %>
+          </div>
+        </div>
+   </div>
+ <% end %>

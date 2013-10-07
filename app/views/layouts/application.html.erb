@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <div style="background-color:#FFF5EE">
+
+        <head>
+
+            <title>BestBay</title>
+
+            <%= stylesheet_link_tag    "application", :media => "all" %>
+            <%= stylesheet_link_tag "jquery.countdown.css" %>
+            <%= javascript_include_tag "application" %>
+            <%= javascript_include_tag  "jquery.countdown" %>
+            <%= javascript_include_tag  "bootstrap-tooltip" %>
+            <%= javascript_include_tag  "bootstrap-popover" %>
+            <%= javascript_include_tag  "bootstrap-dropdown" %>
+            <%= javascript_include_tag  "carousel" %>
+            <%= javascript_include_tag  "bootstrap-tab" %>
+            <%= ajaxful_rating_style %>
+            <%= csrf_meta_tags %>
+
+        </head>
+
+        <body>
+            <div style="background-color:#FFF5EE">
+              	<% flash.each do |name, message| %>
+
+              	  <%= content_tag :div, message, :id => "flash_#{name}" %>
+
+                <% end %>
+
+                <%= render 'layouts/header'  %>
+
+                <div class="container" >
+
+                    <div class="row">
+
+                        <div class="span12">
+                            <%= yield  %>
+                        </div>
+
+                    </div>
+
+                  <div class="span12">
+                    <%= render 'layouts/footer'%>
+                  </div>
+
+                  
+                </div>
+            </div>
+        </body>
+    </div>
+
+</html>

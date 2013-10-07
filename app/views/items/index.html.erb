@@ -1,0 +1,28 @@
+<!--A page to display a paginated list of all auctions if the user is admin-->
+<h1>All Auctions</h1>
+<% if current_user.admin? %>
+  <%= will_paginate @items %>
+    <ul class="users">
+      <% @items.each do |item| %>
+        <li>
+          item:
+          <%= link_to item.name, item %>
+
+
+          <% if item.expired? %>
+            status: expired
+          <% end %>
+
+          <!--Admin can deactivate an item, i.e. stop an auction-->
+          <% if !item.expired? %>
+            status: active
+            <%= link_to "Deactivate", :action => 'deactive', :id => item.id %>
+          <% end %>
+
+            <%= link_to "Delete", item, method: :delete, confirm: "Are you sure?"  %>
+
+        </li>
+      <% end %>
+    </ul>
+  <%= will_paginate @items%>
+<% end %>

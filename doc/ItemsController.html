@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ItemsController - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/items_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-allItems">#allItems</a>
+    
+    <li><a href="#method-i-bid">#bid</a>
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-deactive">#deactive</a>
+    
+    <li><a href="#method-i-destroy">#destroy</a>
+    
+    <li><a href="#method-i-edit">#edit</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-search">#search</a>
+    
+    <li><a href="#method-i-show">#show</a>
+    
+    <li><a href="#method-i-sortByAuctionEndAs">#sortByAuctionEndAs</a>
+    
+    <li><a href="#method-i-sortByAuctionEndDes">#sortByAuctionEndDes</a>
+    
+    <li><a href="#method-i-sortByCreateTime">#sortByCreateTime</a>
+    
+    <li><a href="#method-i-sortByPriceAs">#sortByPriceAs</a>
+    
+    <li><a href="#method-i-sortByPriceDes">#sortByPriceDes</a>
+    
+    <li><a href="#method-i-unwatch">#unwatch</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+    <li><a href="#method-i-watch">#watch</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Gemfile~.html">Gemfile~</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./public/robots_txt.html">robots</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BestBay.html">BestBay</a>
+  
+    <li><a href="./BestBay/Application.html">BestBay::Application</a>
+  
+    <li><a href="./AddActiveAttributeToUser.html">AddActiveAttributeToUser</a>
+  
+    <li><a href="./AddAddressAndBirthdayToUsers.html">AddAddressAndBirthdayToUsers</a>
+  
+    <li><a href="./AddAdminToUsers.html">AddAdminToUsers</a>
+  
+    <li><a href="./AddAttachmentPictureToItems.html">AddAttachmentPictureToItems</a>
+  
+    <li><a href="./AddAuctionEndToItems.html">AddAuctionEndToItems</a>
+  
+    <li><a href="./AddBidtimeToItems.html">AddBidtimeToItems</a>
+  
+    <li><a href="./AddCreditCardToUsers.html">AddCreditCardToUsers</a>
+  
+    <li><a href="./AddHigherstPriceBidderToBids.html">AddHigherstPriceBidderToBids</a>
+  
+    <li><a href="./AddHighestpriceToBids.html">AddHighestpriceToBids</a>
+  
+    <li><a href="./AddIndexToUsersEmail.html">AddIndexToUsersEmail</a>
+  
+    <li><a href="./AddItemIdToWatches.html">AddItemIdToWatches</a>
+  
+    <li><a href="./AddNameToCategorie.html">AddNameToCategorie</a>
+  
+    <li><a href="./AddNotificatedToItems.html">AddNotificatedToItems</a>
+  
+    <li><a href="./AddNotifyToBids.html">AddNotifyToBids</a>
+  
+    <li><a href="./AddPasswordConfirmationToUsers.html">AddPasswordConfirmationToUsers</a>
+  
+    <li><a href="./AddPasswordDigestToUsers.html">AddPasswordDigestToUsers</a>
+  
+    <li><a href="./AddRememberTokenToUsers.html">AddRememberTokenToUsers</a>
+  
+    <li><a href="./AddUserIDtoWatches.html">AddUserIDtoWatches</a>
+  
+    <li><a href="./AddinBidNotifiedToBids.html">AddinBidNotifiedToBids</a>
+  
+    <li><a href="./Addindextobids.html">Addindextobids</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Bid.html">Bid</a>
+  
+    <li><a href="./CategoriesItems.html">CategoriesItems</a>
+  
+    <li><a href="./Category.html">Category</a>
+  
+    <li><a href="./ChangeBidtimeToAuctionend.html">ChangeBidtimeToAuctionend</a>
+  
+    <li><a href="./Comment.html">Comment</a>
+  
+    <li><a href="./CommentsController.html">CommentsController</a>
+  
+    <li><a href="./CommentsHelper.html">CommentsHelper</a>
+  
+    <li><a href="./CreateBids.html">CreateBids</a>
+  
+    <li><a href="./CreateCategories.html">CreateCategories</a>
+  
+    <li><a href="./CreateComments.html">CreateComments</a>
+  
+    <li><a href="./CreateItems.html">CreateItems</a>
+  
+    <li><a href="./CreateRates.html">CreateRates</a>
+  
+    <li><a href="./CreateUsers.html">CreateUsers</a>
+  
+    <li><a href="./CreateWatches.html">CreateWatches</a>
+  
+    <li><a href="./HomeController.html">HomeController</a>
+  
+    <li><a href="./HomeHelper.html">HomeHelper</a>
+  
+    <li><a href="./Item.html">Item</a>
+  
+    <li><a href="./ItemsController.html">ItemsController</a>
+  
+    <li><a href="./ItemsHelper.html">ItemsHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Project.html">Project</a>
+  
+    <li><a href="./Rate.html">Rate</a>
+  
+    <li><a href="./RemoveAuctionEndFromItems.html">RemoveAuctionEndFromItems</a>
+  
+    <li><a href="./RemoveBidTimeFromItems.html">RemoveBidTimeFromItems</a>
+  
+    <li><a href="./RemovePasswordConfirmationFromUsers.html">RemovePasswordConfirmationFromUsers</a>
+  
+    <li><a href="./RenameUsersToUser.html">RenameUsersToUser</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+    <li><a href="./Watch.html">Watch</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ItemsController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-allItems" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">allItems</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>render all items</p>
+          
+
+          
+          <div class="method-source-code" id="allItems-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">allItems</span>
+  <span class="ruby-ivar">@items</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'items/search'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- allItems-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- allItems-method -->
+
+    
+      <div id="method-i-bid" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Bid.html">Bid</a> on an item</p>
+          
+
+          
+          <div class="method-source-code" id="bid-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bid</span>
+  <span class="ruby-ivar">@item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">setHighestPriceAndWinner</span>
+
+  <span class="ruby-comment"># If auction_end.localtime &gt; DateTime.now, users can bid this item.</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@item</span>.<span class="ruby-identifier">auction_end</span>.<span class="ruby-identifier">localtime</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>)
+    <span class="ruby-ivar">@bid</span> = <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">bids</span>.<span class="ruby-identifier">find_by_user_id</span>(<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@bid</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+      <span class="ruby-ivar">@bid</span> = <span class="ruby-constant">Bid</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">item_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">price</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:price</span>])
+      <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span>(<span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">highest_price</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">start_price</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">save</span>
+            <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bid on an item&quot;</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Please bid with a price&quot;</span>
+            <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span> 
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Please bid with a higher price&quot;</span>
+          <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Please bid with a price&quot;</span>
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span> 
+      <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Several users have bid on the item and </span>
+  <span class="ruby-comment"># this new price will be compared to the original one to get the highest price</span>
+  <span class="ruby-keyword">else</span>
+       <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:price</span>]
+       <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+         <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">highest_price</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">start_price</span>
+            <span class="ruby-identifier">setinBid_notify</span>
+            <span class="ruby-ivar">@bid</span>.<span class="ruby-identifier">save!</span>
+            <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bid on an item&quot;</span>
+         <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Please bid with a higher price&quot;</span>
+            <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>
+         <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Please bid with a price&quot;</span>
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>  
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Auction is over!!!&quot;</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span> 
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- bid-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- bid-method -->
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Build the new item in current_user.items and then save it</p>
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+
+  <span class="ruby-ivar">@item</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">items</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:item</span>].<span class="ruby-identifier">except</span>(<span class="ruby-value">:bid_time</span>))
+
+  <span class="ruby-comment"># Calculate the end time of auction</span>
+  <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">auction_end</span>=<span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:item</span>][<span class="ruby-value">:bid_time</span>].<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">hours</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Item posted&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-identifier">new_item_path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-deactive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deactive</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>deactivate an auction</p>
+          
+
+          
+          <div class="method-source-code" id="deactive-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deactive</span>
+ <span class="ruby-ivar">@item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+ <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">auction_end</span>=<span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span> 
+ <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">save</span>
+ <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">items_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deactive-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deactive-method -->
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find item by id and destroy it then redirect to root_url</p>
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span> 
+   <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+   <span class="ruby-identifier">item</span>.<span class="ruby-identifier">destroy</span>
+   <span class="ruby-comment"># item.bids.each do |bid|</span>
+   <span class="ruby-comment">#  bid.destroy</span>
+   <span class="ruby-comment"># end</span>
+   <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-node">&quot;Delete Item #{item.name}&quot;</span>
+   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">root_url</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- destroy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- destroy-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find item by its id and render the edit view</p>
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+  <span class="ruby-ivar">@item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>For controller to transfer ruby into html from model</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@items</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-identifier">page</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>], <span class="ruby-identifier">per_page</span><span class="ruby-operator">:</span> <span class="ruby-value">10</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Have a new item and a category for items</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:return_to</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span>
+  <span class="ruby-ivar">@item</span>  = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@categories</span> = <span class="ruby-constant">Category</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>search function</p>
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>
+    <span class="ruby-ivar">@items</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>])
+    <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- search-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- search-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Invoking Method setHighestPriceAndWinner to have the highest price  of the
+item auction and the owner’s name</p>
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+  <span class="ruby-ivar">@item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">setHighestPriceAndWinner</span>
+  <span class="ruby-ivar">@comments</span> = <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-identifier">page</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>], <span class="ruby-identifier">per_page</span><span class="ruby-operator">:</span> <span class="ruby-value">5</span>)
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+      <div id="method-i-sortByAuctionEndAs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sortByAuctionEndAs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sort the items according to their aution_end time in ascending time</p>
+          
+
+          
+          <div class="method-source-code" id="sortByAuctionEndAs-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sortByAuctionEndAs</span>
+  <span class="ruby-ivar">@ids</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:items</span>]
+  <span class="ruby-comment">#@type = params[:type]</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@beforeSort</span> = []
+  <span class="ruby-ivar">@items</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>])
+    <span class="ruby-ivar">@beforeSort</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">expired?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@items</span> = <span class="ruby-identifier">autionEndMergesortAs</span>(<span class="ruby-ivar">@beforeSort</span>)
+  <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'items/search'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sortByAuctionEndAs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sortByAuctionEndAs-method -->
+
+    
+      <div id="method-i-sortByAuctionEndDes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sortByAuctionEndDes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sort the items according to their aution_end time in descending time</p>
+          
+
+          
+          <div class="method-source-code" id="sortByAuctionEndDes-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sortByAuctionEndDes</span>
+  <span class="ruby-ivar">@ids</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:items</span>]
+  <span class="ruby-comment">#@type = params[:type]</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@beforeSort</span> = []
+  <span class="ruby-ivar">@items</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>])
+    <span class="ruby-ivar">@beforeSort</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">expired?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@items</span> = <span class="ruby-identifier">autionEndMergesortDes</span>(<span class="ruby-ivar">@beforeSort</span>)
+  <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'items/search'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sortByAuctionEndDes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sortByAuctionEndDes-method -->
+
+    
+      <div id="method-i-sortByCreateTime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sortByCreateTime</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sort the items according to their created_at time</p>
+          
+
+          
+          <div class="method-source-code" id="sortByCreateTime-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sortByCreateTime</span>
+  <span class="ruby-ivar">@ids</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:items</span>]
+  <span class="ruby-comment">#@type = params[:type]</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@beforeSort</span> = []
+  <span class="ruby-ivar">@items</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>])
+    <span class="ruby-ivar">@beforeSort</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">expired?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@items</span> = <span class="ruby-identifier">createTimeMergesort</span>(<span class="ruby-ivar">@beforeSort</span>)
+  <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'items/search'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sortByCreateTime-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sortByCreateTime-method -->
+
+    
+      <div id="method-i-sortByPriceAs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sortByPriceAs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sort the items according to their start_price in ascending order</p>
+          
+
+          
+          <div class="method-source-code" id="sortByPriceAs-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sortByPriceAs</span>
+  <span class="ruby-ivar">@ids</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:items</span>]
+  <span class="ruby-comment">#@type = params[:type]</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@beforeSort</span> = []
+  <span class="ruby-ivar">@items</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>])
+    <span class="ruby-ivar">@beforeSort</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">expired?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@items</span> = <span class="ruby-identifier">priceMergesortAs</span>(<span class="ruby-ivar">@beforeSort</span>)
+   <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'items/search'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sortByPriceAs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sortByPriceAs-method -->
+
+    
+      <div id="method-i-sortByPriceDes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sortByPriceDes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sort the items according to their start_price in descending order</p>
+          
+
+          
+          <div class="method-source-code" id="sortByPriceDes-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sortByPriceDes</span>
+  <span class="ruby-ivar">@ids</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:items</span>]
+  <span class="ruby-comment">#@type = params[:type]</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@beforeSort</span> = []
+  <span class="ruby-ivar">@items</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">item</span> = <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@ids</span>[<span class="ruby-identifier">index</span>])
+    <span class="ruby-ivar">@beforeSort</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">expired?</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@items</span> = <span class="ruby-identifier">priceMergesortDes</span>(<span class="ruby-ivar">@beforeSort</span>)
+  <span class="ruby-identifier">paginateItems</span>(<span class="ruby-ivar">@items</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'items/search'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sortByPriceDes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sortByPriceDes-method -->
+
+    
+      <div id="method-i-unwatch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unwatch</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An item can be removed from the watchlist</p>
+          
+
+          
+          <div class="method-source-code" id="unwatch-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unwatch</span>
+  <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">watches</span>.<span class="ruby-identifier">find_by_item_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]).<span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@item</span>= <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-comment">#current_user.watched_items &lt;&lt; @item</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Item Removed from Watch List&quot;</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unwatch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unwatch-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets item and user who has the item by item id and item.user_id</p>
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-ivar">@item</span>= <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@item</span>.<span class="ruby-identifier">user_id</span>)
+  <span class="ruby-identifier">params</span>[<span class="ruby-value">:item</span>][<span class="ruby-value">:category_ids</span>] <span class="ruby-operator">||=</span> []
+    <span class="ruby-keyword">if</span>  <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:item</span>])
+        <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span> , <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Item Updated&quot;</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">render</span> <span class="ruby-string">'edit'</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+      <div id="method-i-watch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">watch</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a watch for association between items and users</p>
+          
+
+          
+          <div class="method-source-code" id="watch-source">
+            <pre><span class="ruby-comment"># File app/controllers/items_controller.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">watch</span>
+  <span class="ruby-ivar">@item</span>= <span class="ruby-constant">Item</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-constant">Watch</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">item_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@item</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-comment">#current_user.watched_items &lt;&lt; @item</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@item</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Item Added to Watch List&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- watch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- watch-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

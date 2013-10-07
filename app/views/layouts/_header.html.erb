@@ -1,0 +1,117 @@
+<!-- header includes logo and function tab row -->
+<header>
+
+    <div class="container">
+      <!-- logo picture for BestBay and Team Panda -->
+      <div class="row" id = "pandaLine">
+          <div class="span2" id="panda">
+            <%= link_to image_tag("2012-10-07.png", alt: "2012-10-07"), '' %>
+          </div>
+          <div class="span10" id="titlePic">
+                <%= link_to image_tag("title1.png", alt: "title1"), root_url %>
+          </div>
+      </div>
+
+      <ul class="nav nav-tabs" id="navTop"  >
+            <!-- welcome information for signed in user -->
+            <% if signed_in? %>
+              <li class="disabled">
+                  <a>
+                    <%= "Hi" %>
+
+                    <% if current_user.admin? %>
+                            Boss
+                    <% end %>
+
+                    <%= "#{current_user.userName}" %>
+                  </a>
+              </li>
+
+              <li>
+                  <%= link_to "Home", root_path %>
+              </li>
+
+              <li>
+                  <%= link_to "My items", watchlist_path %>
+              </li>
+
+              <!-- administrator can list all users and items -->
+              <% if current_user.admin? %>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" >
+                    Admin
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <%= link_to "List Users", users_path %>
+                    </li>
+                    <li>
+                      <%= link_to "List Auctions", items_path %>
+                    </li>
+                  </ul>
+                </li>
+              <% end %>
+
+                <li>
+                  <%= link_to "Post items", new_item_path %>
+                </li>
+
+                <!-- notification -->
+                <% if calculateNotifications > 0 %>
+                    <div class="span1" id="notifications">
+                      <%= link_to("Notification(#{@notificationNum})", '#', :id => 'example',:class => "btn btn-danger",  :rel => "popover", :title => "Notification", :"data-content" => "#{render 'home/notification'}") %>
+                    </div>
+                <% else %>
+                <div class="span1" id="notifications">
+                  <%= link_to('Notification', '#', :id => 'example', :class => "btn", :rel => "popover", :title => "Notification", :"data-content" => "#{render 'home/notification'}") %>
+                </div>
+              <% end %>
+
+
+
+              <li class="nav pull-right">
+
+                  <%= link_to "Sign out", signout_path, method: 'delete' %>
+
+              </li>
+
+              <!-- User can view own profile -->
+              <li class="nav pull-right">
+               <%= link_to "Profile", user_path(current_user) %>
+              </li>
+
+              <!-- login and logout/ -->
+             <% else %>
+              <li>
+                <%= link_to "Sign in", signin_path %>
+              </li>
+              <li>
+                <%= link_to "Sign up", signup_path %>
+              </li>
+             <% end  %>
+
+             <!-- search row -->
+        <div class="span8 offset2" id="search">
+          <%= render 'items/search' %>
+        </div>
+      </ul>
+    </div>
+
+
+  <script>
+      $(function () {
+          $('#myTab').tab('show');
+      })
+
+      $(function ()  {
+          $("#example").popover({animation: true, html: true, placement: 'bottom' })
+      });
+  </script>
+
+</header>
+
+
+
+

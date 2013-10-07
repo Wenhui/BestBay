@@ -1,0 +1,39 @@
+<!--Displays the form for editing an item-->
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <h1>Edit Item Information</h1>
+
+      <%= form_for(@item, :html => { :multipart => true }) do |c| %>
+        <%=  render partial: 'shared/error_messages', locals: {obj: @item} %>
+        <div class="span12">
+          <%= c.label 'Enter item name' %>
+          <%= c.text_field :name %>
+
+          <%= c.label 'Upload picture' %>
+          <%= c.file_field :picture%>
+
+          <%= c.label 'Enter item description' %>
+          <%= c.text_area :description %>
+
+          <%= c.label 'Category' %>
+          <% for category in Category.all %>
+            <div>
+              <%= check_box_tag "item[category_ids][]", category.id, @item.categories.include?(category) %>
+              <%= category.name %>
+            </div>
+          <% end %>
+
+        </div>
+
+        <div class="span2">
+            <%= c.submit "Edit", class: "btn btn-medium btn-primary", style: 'width: 80%' %>
+        </div>
+        <div class="span2">
+            <%= link_to "Cancel", item_path, class: "btn btn-medium btn-primary",style: 'width: 80%' %>
+        </div>
+     <% end %>
+
+  </div>
+</div>
+

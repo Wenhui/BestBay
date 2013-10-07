@@ -1,0 +1,17 @@
+<!-- footer includes team name, basic introduction and contact information -->
+<footer class="footer">
+	<div style="background-color:#FFF5EE">
+    <small>
+       Team Panda
+      
+    </small>
+    <nav>
+      <ul>
+        <%=  debug(params) if Rails.env.development? %> 
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", about_path %></li>
+      </ul>
+    </nav>
+  </div>
+
+</footer>

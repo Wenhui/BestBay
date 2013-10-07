@@ -1,0 +1,202 @@
+@import "bootstrap";
+
+body{
+  margin: 0;
+}
+  
+.center {
+  text-align: center;
+}
+
+
+/* mixins, variables, etc. */
+
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/* typography */
+
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+//h2 {
+//  font-size: 1.7em;
+//  letter-spacing: -1px;
+//  margin-bottom: 30px;
+//  text-align: center;
+//  font-weight: normal;
+//  color: #999;
+//}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* forms */
+
+input, textarea, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 15px;
+  @include box_sizing;
+
+
+}
+select{
+  border: 1px solid #bbb;
+  width: 38%;
+  padding: 5px;
+  margin-bottom: 15px;
+  @include box_sizing;
+
+}
+.btn-toolbar{
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  a{
+    height: auto !important;
+    margin-right: 10px;
+    width: 30%;
+  }
+
+  input{
+    height: auto !important;
+    margin-right: 10px;
+    width: 30%;
+  }
+
+}
+
+input {
+  height: auto !important;
+}
+
+.bids {
+  background-color: #ffd5b5;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  position: relative;
+  top: 10px;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid #D3D3D3;
+    &:last-child {
+      border-bottom: 1px solid #D3D3D3;
+    }
+  }
+}
+
+//forms
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+#errorExplanation {
+  color: #ff0000;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+
+  h2 {
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    font-weight: normal;
+
+  }
+}
+
+#comments_list{
+
+  h5 {
+    font-size: 0.8em;
+    letter-spacing: -1px;
+
+    text-align: left;
+    font-weight: normal;
+    color: $grayLight;
+  }
+
+  list-style: none;
+
+  li {
+    margin-left: 20px;
+
+  }
+
+  blockquote{
+    p{
+      font-size: 1.1em;
+      margin-bottom: 1px;
+      width: 80%;
+      text-align: left;
+      font-weight: normal;
+      word-wrap: break-word;
+    }
+
+    margin-bottom: 2px;
+    margin-top: 10px;
+
+
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #A9A9A9
+}
+
+footer a {
+  color: #A9A9A9;
+}  
+
+footer a:hover { 
+  color: #A9A9A9;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}

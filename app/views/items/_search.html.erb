@@ -1,0 +1,7 @@
+<!--Partial to display the search field: rendered in the header-->
+<%= form_tag({:controller => 'items', :action => 'search'}, :method => 'get') do %>
+
+    <%= text_field_tag :search, params[:search], :id => 'search_field', style: 'width: 75%' %>
+    <%= submit_tag ("Search"), class: "btn btn-medium btn-primary", style: 'width: 15%' %>
+
+<% end %>

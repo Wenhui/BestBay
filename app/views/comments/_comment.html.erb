@@ -1,0 +1,12 @@
+<!-- Partial to display all comments belonging to that item -->
+<li>
+  <blockquote>
+    <p> <%= comment.content %>  </p>
+    <small> posted by <%= comment.commenter.userName %> <%=time_ago_in_words(comment.created_at) %> ago</small>
+  </blockquote>
+  
+  <!-- user can delete his or her own comments -->
+  <% if !current_user.nil? && current_user.id==comment.commenter.id %>
+    <h5> <%= link_to "Delete", comment, :method => :delete, :confirm => "Are you sure?", :remote => true, class: 'delete-comment' %> </h5>
+  <% end %>
+</li>

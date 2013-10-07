@@ -1,0 +1,16 @@
+<!--Partial to display all the comments belonging to the item. Rendered in the items/show.html.erb -->
+<%if current_user!=nil && @item.comments.count > 0%>
+
+  <h2> <%= @item.comments.count %> </h2>
+  <ol class="comments">	
+    <li>	
+		<% for comment in @item.comments %>
+			<%= comment.content %>
+			<br>
+		<span class="timestamp">
+		    Posted by <%=link_to comment.commenter.userName, {:controller => :users, :action => :profile, :id => comment.commenter.id} %> <%= time_ago_in_words(comment.created_at) %> ago
+		</span>
+		<% end %>
+	</li>
+  </ol>
+<% end %>

@@ -1,0 +1,32 @@
+<!-- partial render notifications -->
+<% if current_user!= nil %>
+<ul class="nav nav-tabs">
+  <li><a href="#post" data-toggle="tab">Posted</a></li>
+  <li><a href="#bid" data-toggle="tab">In Bid</a></li>
+  <li><a href="#closedbid" data-toggle="tab">Closed Bid</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="post">
+    <br />
+    <div id='posted'>
+      <%= render :partial => 'home/posted' %>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="bid">
+    <br />
+    <div id= 'inBid'>
+      <%= render :partial => 'home/inBid' %>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="closedbid">
+    <br />
+    <div id = "closedBid">
+       <%=  render :partial => 'home/closedBid' %>
+    </div>
+  </div>
+
+</div>
+<% end %>

@@ -1,0 +1,10 @@
+<!-- partial to display items in category on homepage when browsing -->
+<p><h2>Items in <%= @category.name %></h2></p>
+<div id="item_list">
+		<% @category.items.each_with_index do |item, i| %>
+				<%= link_to image_tag(item.picture.url(:thumb)), item, class: "item_image"%>
+		<% end %>
+</div> 
+
+		
+

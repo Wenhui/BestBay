@@ -1,0 +1,51 @@
+<!--The partial displays items after search is performed-->
+<style>
+    p.oblique{font-style: oblique; font-weight: bold;}
+</style>
+
+<!--Displays dropdown menu with the options for sorting items according to a certain criterion-->
+<div class="dropdown">
+  <a class="dropdown-toggle btn" id="dLabel" role="button" data-toggle="dropdown" data-target="#">
+    Sort Items
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+
+    <%= link_to "Price: lowest first", { :controller => 'items', :action => 'sortByPriceAs', :items => @items}, :method => 'get'%>
+    <%= link_to "Price: highest first",  { :controller => 'items', :action => 'sortByPriceDes', :items => @items}, :method => 'get' %>
+    <%= link_to "Auction Closed Time: earliest first", { :controller => 'items', :action => 'sortByAuctionEndAs', :items => @items}, :method => 'get'%>
+    <%= link_to "Auction Closed Time: latest first", { :controller => 'items', :action => 'sortByAuctionEndDes', :items => @items}, :method => 'get'%>
+    <%= link_to "Newly posted", {:controller => 'items', :action => 'sortByCreateTime', :items => @items}, :method => 'get' %>
+    <%= link_to "All Items", {:controller => 'items', :action => "allItems", :items => @items}, :method => 'get' %>
+  </ul>
+</div>
+
+<!--List the found items in the sorted order-->
+<div id="product_list">
+    <% if !@page_results.nil? %>
+
+      <%= will_paginate @page_results %>
+            <h1>Listing products</h1>
+
+            <table>
+                  <%=  render @page_results  %>
+            </table>
+
+      <%= will_paginate @page_results %>
+
+    <% else %>
+        <h1>No matching results found</h1>
+        <hr>
+        <h1>Latest products</h1>
+
+        <table>
+            <%= render @items  %>
+        </table>
+    <% end %>
+</div>
+
+<!--Javascript to display dropdown menu-->
+<script type="text/javascript">
+$('.dropdown-toggle').dropdown();
+
+</script> 

@@ -1,0 +1,6 @@
+//This script enables item pagination in the user's watchlist without reloading the page
+$('#Posted').html('<%=escape_javascript render :partial => "items/watch_list",  locals: {:items =>  @items, :p_name => "page"}  %>');
+$('#Watched').html('<%=escape_javascript render :partial => "items/watch_list",  locals: {:items =>  @watched_items, :p_name => "watched_page"}  %>');
+$('#Bid').html('<%=escape_javascript render :partial => "items/watch_list",  locals: {:items =>  @bid_items, :p_name => "bid_page"}  %>');
+
+$('.pagination a').attr('data-remote', 'true');

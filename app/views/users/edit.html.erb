@@ -1,0 +1,5 @@
+<!-- render partial _user.html.erb for editing -->
+<h1>Edit User Information</h1>
+
+<%=  render :partial => 'users/user', locals: { buttonName: "Edit", path: user_path} %>
+

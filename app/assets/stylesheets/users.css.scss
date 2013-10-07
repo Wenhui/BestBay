@@ -1,0 +1,36 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#flash_notice {
+	background: green;
+	border: 1px outset darken(green, 20%);
+	text-align: center;
+	padding: 5px;
+	color: White;
+}
+
+#flash_error {
+	background: DarkRed;
+	border: 1px outset darken(red, 50%);
+	text-align: center;
+	padding: 5px;
+	color: White;
+}
+
+#search_field{
+	width: 430px;
+	padding: 5px;
+	position: relative;
+	top: 5px;
+}
+
+#categoryList{
+	position: relative;
+	bottom: 19px；
+}
+
+#itemName{
+	position: relative;
+	bottom: 0px;
+	font-size:25px;
+}

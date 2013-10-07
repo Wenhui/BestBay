@@ -1,0 +1,8 @@
+<!--This partial displays items in the watch list ("My items")-->
+<%= will_paginate items, :param_name => p_name %>
+	<div id="product_list">
+		<table>
+		  <%=  render :partial => 'items/item', collection: items, as: :item   %>
+		</table>
+	</div>
+<%= will_paginate items, :param_name => p_name %>

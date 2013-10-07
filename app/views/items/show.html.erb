@@ -1,0 +1,160 @@
+<!--This file describes the page on which an item profile is shown. -->
+<!--It displays the image of an item, its decscription, its bid history and a countdown timer.-->
+<!--Includes fields for making a bid on an item and leaving comments.-->
+
+<!--Js for the countdown timer. Uses the jquery.countdown plug in -->
+<script type="text/javascript">
+$(function () {
+    var year = <%= @item.auction_end.year %>;
+    var month = <%= @item.auction_end.month %>;
+    var day = <%= @item.auction_end.day %>;
+    var hour = <%= @item.auction_end.hour %>;
+    var minute = <%= @item.auction_end.min %>;
+    var second = <%= @item.auction_end.sec %>;
+    var currentTime = new Date();
+    var zone = -(currentTime.getTimezoneOffset() / 60);
+    austDay = new Date(year, month-1, day, hour + zone, minute, second);
+  $('#defaultCountdown').countdown({until: austDay, expiryText: 'Auction closed',
+    alwaysExpire: true});
+});
+</script>
+
+
+  <!--<%=link_to "home", root_path %> &gt;&gt; <%= @item.name %>-->
+  <!--<br />-->
+  <!--<br />-->
+
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <!--Display item picture-->
+          <div class="span4">   
+               <%= link_to image_tag(@item.picture.url(:large)), @item %>
+          </div>
+              
+          <div class="span8">
+            <div id="itemName">
+              <%= @item.name %>
+            </div>
+
+            <div id="itemPoster">
+              <span class="timestamp">
+                  <!--Displays a seller's name with a link to his/her profile. Links to a different profile view if the user is admin-->
+                
+                  <% if current_user != nil && (current_user.id == @item.user.id || current_user.admin?) %>
+                    Posted by 
+                    <%= link_to User.find(@item.user.id).userName, User.find(@item.user.id) %> 
+                    <%= time_ago_in_words(@item.created_at) %> ago
+                  
+                
+                  <% else %>
+                    Posted by 
+                    <%= link_to @item.user.userName, {:controller => :users, :action => :profile, :id => @item.user.id} %> 
+                    <%= time_ago_in_words(@item.created_at) %> ago
+                  <% end %>
+              </span>
+            </div>
+
+            <!--Display item's bid history: last 10 bids made by different users-->
+            <div class="row-fluid">
+              <div class= "span8 bids">
+                <div class="center">
+                    
+                    <h3>start price <%=number_to_currency(@item.start_price)  %></h3>
+                    <h2>Bid History</h2>
+
+                </div>
+                <%= render partial: 'items/bid'  %>
+              </div>
+
+              <!--A form for making a bid on an item.-->
+              <div class="span4" id="makeBid">
+                     <div id="defaultCountdown"></div>
+                      <% if current_user != nil %>
+                         <% if @item.expired? == false %>   <!--auction is not over? -->
+                              <% if self_posted_item? %>     <!-- current user did not post this item? -->
+                                  <%= form_tag({:action => :bid}, :method => "post") do %>
+                                  <%= hidden_field_tag :id, @item.id %>
+
+                                      <%= label :item, :bid_price, "Price:"  %>
+                                      <%= text_field_tag :price %>
+
+                                      <%= submit_tag "Bid It Now",  class: "btn btn-large"%>
+                                  <% end %>
+                              <% end %> 
+                         <% end %>
+                         
+                        <% if correct_item? %> <!--current item was not posted by the user ? -->
+                           <%= link_to "Add to watch list", {:action => 'watch', :id => @item.id}, class: "btn" %>
+                        <% else %>
+                              <% if watched? %>   <!--if item is on the watch list already, add a button to remove -->
+                               <%= link_to "Remove from watch list", {:action => 'unwatch', :id => @item.id}, class: "btn" %>
+                              <% end %>
+                        <% end %>
+
+                        <!-- Add an option to delete an item if no bid is higher than reserve price and the current user is the seller or current user is admin) -->
+                        <% if current_user.admin? || (current_user?(User.find(@item.user_id)) && @item.highest_price < @item.reserve_price) %>
+
+
+                            <h2>  <%= link_to "Delete", @item, method: :delete, confirm: "You sure?", class: "btn btn-medium btn-primary",style: 'width: 55%' %> </h2>
+
+                        <% end %>
+                        <!-- Add an option to edit the item if auction is still on and the current user is the seller or admin) -->
+                        <% if (current_user.admin? || current_user?(User.find(@item.user_id))) && @item.expired? == false %>
+
+                            <h2><%= link_to "Edit" , edit_item_path, class: "btn btn-medium btn-primary",style: 'width: 50%'%> </h2>
+
+                        <% end %>
+
+                      <% end %>
+
+                      <br />
+                      <br />
+
+                    <!-- For the auction winner, add an option to rate the seller -->
+                        <% if current_user!= nil && @item.expired? == true && current_user.id == @item.winner_id %>
+                            <h3> Please rate the seller </h3>
+                            <%= ratings_for User.find(@item.user_id),  :show_user_rating => true, :dimension => :rating %>
+                        <% else %>
+                    <!--Display seller's rating-->
+                            <h3> Seller's average rating </h3>
+                            <%= ratings_for User.find(@item.user_id),  :static, :dimension => :rating %>
+                        <% end %>
+                     
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Display item's description-->
+  <div id="description">
+    <h2> Description </h2>
+    <hr >
+    <%= @item.description %>
+    <hr >
+    <br />
+    <br />
+    <br />
+
+  </div>
+
+
+<p>
+  <!--Display the form for posting a comment -->
+  <div>
+    <h2>Please post a comment</h2>
+    <%=  render :partial => 'comments/comment_form', locals: { buttonName: "Comment", item_id: @item.id }%>
+  </div>
+</p>
+<!--Display a paginated list of all comments belonging to the item -->
+<ul id="comments_list">
+<% if @item.comments.any? %>
+    <%= will_paginate @comments%>
+
+      <%=  render :partial => "comments/comment", collection: @comments, as: :comment %>
+
+    <%= will_paginate @comments %>
+<% end %>
+</ul>

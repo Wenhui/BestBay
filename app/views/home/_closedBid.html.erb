@@ -1,0 +1,11 @@
+<!-- partial displays notifications of bid-on items whose acution is closed -->
+<% current_user.bids.each do |bid| %>
+    <% if bid.notified? == false %>
+      <% item = Item.find(bid.item_id) %>
+      <% if bid.price == item.highest_price %>
+          Congratulations! You have won <%=link_to item.name, item %> with <%= number_to_currency(bid.price) %> <%= link_to 'X', {:controller => 'home', :action => 'closedBidNotified', :id => bid.id}, :remote => true, class: 'btn btn-mini'%><br />
+      <% else %>
+          Sorry, You failed the bid of <%=link_to item.name, item %>, your price is <%= number_to_currency(bid.price) %>, the final price is <%= number_to_currency(item.highest_price)%> <%= link_to 'X', {:controller => 'home', :action => 'closedBidNotified', :id => bid.id}, :remote => true, class: 'btn btn-mini' %><br />
+      <% end %>
+    <% end %>
+ <% end %>

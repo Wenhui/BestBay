@@ -1,0 +1,13 @@
+<!-- partial display result notifications of posted items whose auction is closed -->
+ <% current_user.items.each do |item| %>
+    <% if item.notified? == false && item.name.length > 0 %>
+	    <% if item.highest_price != 0 %>
+	         <%= link_to item.name, item %>'s auction ends, final price is 
+	         <%= number_to_currency(item.highest_price) %> 
+	         <%= link_to 'X', {:controller => 'home', :action => 'postedNotified', :id => item.id}, :remote => true, class: 'btn btn-mini'%> <br />
+	     <% else %>
+	     	 <%= link_to item.name, item %>'s auction ends, but no one made a bid  
+	     	 <%= link_to 'X', {:controller => 'home', :action => 'postedNotified', :id => item.id}, :remote => true, class: 'btn btn-mini'%> <br />
+	     <% end %>
+    <% end %>
+ <% end %>

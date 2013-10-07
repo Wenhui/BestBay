@@ -1,0 +1,9 @@
+<!-- partial to display notifications of bidding which has been excceded -->
+<% current_user.bids.each do |bid| %>
+	<% if bid.inbid? == true %>
+	  <% item = Item.find(bid.item_id) %>
+	  <% if bid.price < item.highest_price %>
+	      Notice! Your bid on <%= link_to item.name, item %> has been exceeded, the current bidding price is <%= number_to_currency(item.highest_price) %> <%= link_to 'X', {:controller => 'home', :action => 'inBidNotified', :id => bid.id}, :remote => true, class: 'btn btn-mini'%><br />
+	  <% end %>
+	<% end %>
+<% end %>

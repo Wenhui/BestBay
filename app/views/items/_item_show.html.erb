@@ -1,0 +1,12 @@
+<!--The partial displays items in a list.-->
+<div class="options">
+
+</div>
+
+<div class="item_info">
+	<ul>
+		<% @items.each do |item| %>
+			<li><%= link_to item.name, :action => 'show', :id => item.id  %></li>
+		<% end %>
+	</ul>
+</div>

@@ -1,0 +1,108 @@
+<!-- homepage for every user -->
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+
+    <div class="row-fluid">
+
+      <!-- display all categories   -->
+      <div class="span3 bs-docs-sidebar" id="categoryList" ><font size="3">
+
+        <ul class="nav nav-tabs  nav-stacked ">
+          <li><a href="/?id=1"  data-remote = "true"><i class="icon-chevron-right"></i> Books</a></li>  
+            <li><a href="/?id=2"  data-remote = "true"><i class="icon-chevron-right"></i> Cars</a></li>  
+            <li><a href="/?id=3"  data-remote = "true"><i class="icon-chevron-right"></i> Electronics</a></li>  
+            <li><a href="/?id=4"  data-remote = "true"><i class="icon-chevron-right"></i> Sports</a></li>  
+            <li><a href="/?id=5"  data-remote = "true"><i class="icon-chevron-right"></i> Arts</a></li>  
+            <li><a href="/?id=6"  data-remote = "true"><i class="icon-chevron-right"></i> Toys</a></li>
+            <li><a href="/?id=7"  data-remote = "true"><i class="icon-chevron-right"></i> Clothing</a></li>  
+            <li><a href="/?id=8"  data-remote = "true"><i class="icon-chevron-right"></i> Entertainment</a></li> 
+            <li><a href="/?id=9"  data-remote = "true"><i class="icon-chevron-right"></i> Others</a></li> 
+        </ul> </font>
+      </div>
+
+      <div class="span6 columns">
+
+        <div id="myCarousel" class="carousel slide">
+
+            <!-- image for each category -->
+            <div class="carousel-inner">
+                <div class="active item">
+                    <%= image_tag "books.jpg",:width => 760, :height => 260, :alt => "Books" %>
+                    <div class="carousel-caption">
+                        <h4>Books</h4>
+                        <p>"Books are human friends."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "cars.jpg",:width => 700, :height => 260, :alt => "Cars" %>
+                    <div class="carousel-caption">
+                        <h4>Cars</h4>
+                        <p>"Cars change human's life."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "electronics.jpg",:width => 760, :height => 260, :alt => "Electronics" %>
+                    <div class="carousel-caption">
+                        <h4>Electronics</h4>
+                        <p>"Shop the latest Ipad and tablets."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "Sports.jpeg",:width => 760, :height => 260, :alt => "Sports" %>
+                    <div class="carousel-caption">
+                        <h4>Sports</h4>
+                        <p>"Sports are human friends."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "Arts.png",:width => 760, :height => 260, :alt => "Arts" %>
+                    <div class="carousel-caption">
+                        <h4>Arts</h4>
+                        <p>"Arts are human friends."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "Toys.jpeg",:width => 760, :height => 260, :alt => "Toys" %>
+                    <div class="carousel-caption">
+                        <h4>Toys</h4>
+                        <p>"Toys are human friends."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "clothing.jpeg",:width => 760, :height => 260, :alt => "Clothing" %>
+                    <div class="carousel-caption">
+                        <h4>Clothing</h4>
+                        <p>"Clothing are human friends."</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <%= image_tag "entertainment.jpeg",:width => 760, :height => 260, :alt => "Entertainment" %>
+                    <div class="carousel-caption">
+                        <h4>Entertainments</h4>
+                        <p>"Entertainments are human friends."</p>
+                    </div>
+                </div>
+            </div>
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+
+        <!-- button to post an item -->
+        <div class="span11">
+          <%= link_to "Post items", new_item_path , class: "btn btn-medium btn-info",style: 'width: 100%' %>
+        </div> 
+
+       </div>
+
+    </div>
+
+   <div class="span12 columns" >
+     <div id="items">
+     </div>
+   </div>
+
+</div>
+
+<!-- javascript to show items in each category -->
+<script type="text/javascript">
+$('#myCarousel').carousel();
+</script>  

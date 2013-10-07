@@ -1,0 +1,12 @@
+<!--Taken from http://ruby.railstutorial.org/chapters/sign-up#sec-the_flash-->
+<% if obj.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(obj.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+      <ul>
+        <% obj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

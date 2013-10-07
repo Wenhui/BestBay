@@ -1,0 +1,17 @@
+<!-- partial displays a form to make a new comment to an item -->
+<% @comment = Comment.new %>
+<%= form_for @comment, remote: true, id: "commentForm"  do |f| %>
+    <div class="row" >
+      <div class="span9">
+            <%= f.hidden_field(:item_id, {value: item_id}) %>
+            <%= f.text_area :content, rows: 7, class: "span6" %>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="span9">
+            <%= f.submit buttonName, class: "btn btn-large btn-primary", style: 'width: 20%'%>
+      </div>
+    </div>
+<% end %>
+
+

@@ -1,0 +1,7 @@
+<!-- This page displays a form to post a comment -->
+Enter content of the post:
+<%=  form_for @comment do |f| %>
+	<%= hidden_field_tag(:id , current_user.id) %>
+	content <%= f.text_area :content %> <br/>
+	<%= f.submit %>
+<% end %>

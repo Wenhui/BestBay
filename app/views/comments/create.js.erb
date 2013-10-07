@@ -1,0 +1,3 @@
+// ajax for create a new comment
+$("#comments_list").prepend('<%= escape_javascript(render :partial => "comments/comment", object: @comment ) %>')
+$('.commentField').attr('value', '').focus();

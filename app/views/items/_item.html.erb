@@ -1,0 +1,42 @@
+<!--This partial is rendered after search (_search_result.html.erb) and in the watch list (_watch_list.html.erb)-->
+<!--A partial to display item's main attributes: picture -> description -> price/highest bid and time to the auction end-->
+<!--Use alternating styles for the items-->
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+  <td>
+    <%= link_to image_tag(item.picture.url(:thumb)), item, :class => 'list_image' %>
+  </td>
+
+  <!--Display item description-->
+  <td class="list_description">
+    <dl>
+      <dt><%= link_to item.name, item %></dt>
+      <dd><%= truncate(strip_tags(item.description), :length => 80) %></dd>
+    </dl>
+
+  </td>
+  <!--Display item current highest price or start price-->
+  <td class = "store">
+    <dd>
+      <p class="oblique">
+        <% if item.highest_price != 0 %>
+            <%= number_to_currency(item.highest_price) %>
+        <% else %>
+            <%= number_to_currency(item.start_price) %>
+        <% end %>
+      </p>
+    </dd>
+
+    <!--Display time to auction end-->
+    <dd>
+      <% if item.expired? == false %>
+          <% @hour = ((item.auction_end - DateTime.now).round)/3600 %>
+          <% @minute = (((item.auction_end - DateTime.now) - 3600 * @hour).round)/60 %>
+          <%= @hour %> h
+          <%= @minute %> min
+      <% else %>
+          auction closed
+      <% end %>
+    </dd>
+  </td>
+</tr>

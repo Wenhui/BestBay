@@ -1,0 +1,9 @@
+<!--The page displays a form for posting an item-->
+<div class="container-fluid">
+  <div class="row-fluid">
+
+      <h1>Post Item</h1>
+        <%=  render :partial => 'items/item_form', locals: { buttonName: "Post Item", path: session[:return_to]} %>
+
+  </div>
+</div>
